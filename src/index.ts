@@ -5,7 +5,6 @@ const body = document.querySelector('body');
 
 
 const progressBar = document.getElementById("progress")
-let colorsBar = ["red", "blue", "darkblue", "purple", "orange", "darkred", "black", "white", "green"]
 
 const calcPercent = ( event ) => {
 
@@ -22,14 +21,24 @@ const calcPercent = ( event ) => {
 const scroll$ = fromEvent( document, 'scroll');
 
 const progress$ = scroll$.pipe(
-    // map( event => calcPercent(event) )
-    map( calcPercent ),
-    tap( console.log )
-);
 
+    map( calcPercent ),
+
+);
 
 progress$.subscribe( porcentaje => {
 
+  let colorsBar = [
+    "red", "blue", "darkblue", "purple",
+    "orange", "darkred", "black", "white",
+    "green", "magenta", "yellow"
+  ]
+
     progressBar.style.width = `${ porcentaje }%`;
+
+    let rand = Math.ceil((Math.random()*10))
+
+    progressBar.style.backgroundColor= colorsBar[rand]
+
 
 });
