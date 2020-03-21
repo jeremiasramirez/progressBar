@@ -5,9 +5,9 @@ const body = document.querySelector('body');
 
 
 const progressBar = document.getElementById("progress")
+let colorsBar = ["red", "blue", "darkblue", "purple", "orange", "darkred", "black", "white", "green"]
 
-
-const calcularProcentajeScroll = ( event ) => {
+const calcPercent = ( event ) => {
 
     const {
         scrollTop,
@@ -22,8 +22,8 @@ const calcularProcentajeScroll = ( event ) => {
 const scroll$ = fromEvent( document, 'scroll');
 
 const progress$ = scroll$.pipe(
-    // map( event => calcularProcentajeScroll(event) )
-    map( calcularProcentajeScroll ),
+    // map( event => calcPercent(event) )
+    map( calcPercent ),
     tap( console.log )
 );
 
