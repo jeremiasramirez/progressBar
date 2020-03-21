@@ -1,7 +1,15 @@
 .progress--bar{
-  height: 1px;
-  width: 10%;
+  height: 0px;
   position: fixed;
   top:0;
+  transition: 1s;
+  width: 0;
+  margin-left: -12px;
   background-color: white;
+}
+
+
+.lorem{
+  padding: 1em;
+  font-family: roboto;
 }
