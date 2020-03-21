@@ -1,0 +1,7 @@
+.progress--bar{
+  height: 1px;
+  width: 10%;
+  position: fixed;
+  top:0;
+  background-color: white;
+}
